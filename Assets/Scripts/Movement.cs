@@ -6,17 +6,18 @@ using UnityEngine.AI;
 public class Movement : MonoBehaviour
 {
     [SerializeField] Transform target;
-    //NavMeshAgent agent;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //agent = GetComponent<NavMeshAgent>();
-    }
+    Ray ray;
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        }
+
+        Debug.DrawRay(ray.origin, ray.direction * 100);
+
         GetComponent<NavMeshAgent>().destination = target.position;
     }
 }
