@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104597434309493341}
-  m_LocalRotation: {x: 0.08815362, y: -0.9117873, z: 0.28895554, w: 0.2781685}
-  m_LocalPosition: {x: 12.353356, y: 15.592749, z: 18.361626}
+  m_LocalRotation: {x: 0.3559423, y: -0.50789315, z: 0.24230698, w: 0.7460811}
+  m_LocalPosition: {x: 3.1, y: 5.2, z: -0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2661165419494323671}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 51.01, y: -68.49, z: 0}
 --- !u!20 &104597434309493331
 Camera:
   m_ObjectHideFlags: 0
@@ -127,6 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2661165419494323671}
+  - component: {fileID: 535035266}
   m_Layer: 0
   m_Name: FollowCamera
   m_TagString: Untagged
@@ -150,3 +151,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &535035266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594366819835716238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696318127e0c56c45872d1d74861ad9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
