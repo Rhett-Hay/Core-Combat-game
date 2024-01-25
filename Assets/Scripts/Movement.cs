@@ -7,29 +7,14 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] Transform target;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            MoveToCursor();
-        } 
-        
         UpdateAnimator();
     }
 
-    private void MoveToCursor()
+    public void MoveTo(Vector3 destination)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(ray, out hit);
-
-        if (hasHit) 
-        {
-            GetComponent<NavMeshAgent>().destination = hit.point;
-        }
-
-        Debug.DrawRay(ray.origin, ray.direction * 100);
+        GetComponent<NavMeshAgent>().destination = destination;
     }
 
     private void UpdateAnimator()
