@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
 using RPG.Move;
@@ -10,7 +8,7 @@ namespace RPG.Control
     public class PlayerController : MonoBehaviour
     {
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
