@@ -135,7 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3255334250a2944a118dadc86b8b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &6679804466123493932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponRange: 3
+  target: {fileID: 0}
 --- !u!1001 &3121499661666023065
 PrefabInstance:
   m_ObjectHideFlags: 0

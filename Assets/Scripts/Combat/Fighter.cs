@@ -1,8 +1,7 @@
 using UnityEngine;
 using RPG.Move;
-
 namespace RPG.Combat
-{   
+{
     public class Fighter : MonoBehaviour
     {
         [SerializeField] float weaponRange = 2f;
@@ -11,21 +10,31 @@ namespace RPG.Combat
 
         private void Update()
         {
-            if (target == null && Vector3.Distance(transform.position, target.position) > weaponRange)
+            if (target == null) return;
+
+            if (!GetIsInRange())
             {
                 GetComponent<Movement>().MoveTo(target.position);
-                
             }
-            else if (target != null && Vector3.Distance(transform.position, target.position) < weaponRange)
-            { 
+            else
+            {
                 GetComponent<Movement>().Stop();
-                //target = null;
             }
+        }
+
+        private bool GetIsInRange()
+        {
+            return Vector3.Distance(transform.position, target.position) < weaponRange;
         }
 
         public void Attack(CombatTarget combatTarget)
         {
             target = combatTarget.transform;
+        }
+
+        public void Cancel()
+        {
+            target = null;
         }
     }
 }
