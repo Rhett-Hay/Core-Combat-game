@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using RPG.Combat;
 using RPG.Core;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace RPG.Move
 {
-    public class Movement: MonoBehaviour
+    public class Movement: MonoBehaviour, IAction
     {
         NavMeshAgent navMeshAgent;
 
@@ -23,7 +22,6 @@ namespace RPG.Move
         public void StartMoveAction(Vector3 destination)
         {
             GetComponent<ScheduleAction>().StartAction(this);
-            GetComponent<Fighter>().Cancel();
             MoveTo(destination);
         }
 
@@ -32,7 +30,7 @@ namespace RPG.Move
             navMeshAgent.destination = destination;
             navMeshAgent.isStopped = false;
         }
-        public void Stop()
+        public void Cancel()
         {
             navMeshAgent.isStopped = true;
         }
