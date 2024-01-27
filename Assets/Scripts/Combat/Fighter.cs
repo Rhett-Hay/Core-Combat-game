@@ -1,5 +1,7 @@
 using UnityEngine;
 using RPG.Move;
+using RPG.Core;
+
 namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour
@@ -29,6 +31,7 @@ namespace RPG.Combat
 
         public void Attack(CombatTarget combatTarget)
         {
+            GetComponent<ScheduleAction>().StartAction(this);
             target = combatTarget.transform;
         }
 
