@@ -161,7 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponRange: 4
-  target: {fileID: 4168832251001895114}
+  timeBetweenAttacks: 1
+  target: {fileID: 0}
 --- !u!114 &4692711487076525194
 MonoBehaviour:
   m_ObjectHideFlags: 0
