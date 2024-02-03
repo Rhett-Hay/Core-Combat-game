@@ -11,7 +11,7 @@ namespace RPG.Combat
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] float weaponDamage = 5f;
 
-        [SerializeField] Transform target;
+        Transform target;
         float timeSinceLastAttack = 0;
 
         private void Update()
