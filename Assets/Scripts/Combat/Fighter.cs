@@ -9,7 +9,7 @@ namespace RPG.Combat
     {
         [SerializeField] float weaponRange = 3f;
         [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] float weaponDamage = 5f;
+        //[SerializeField] float weaponDamage = 5f;
 
         Transform target;
         float timeSinceLastAttack = 0;
@@ -41,11 +41,11 @@ namespace RPG.Combat
             }
         }
 
-        void Hit()
+        /*void Hit()
         {
             Health healthComp = GetComponent<Health>();
             healthComp.TakeDamage(weaponDamage);
-        }
+        }*/
 
         private bool GetIsInRange()
         {

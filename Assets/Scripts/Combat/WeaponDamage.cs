@@ -16,15 +16,15 @@ public class WeaponDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == myCollider) { return; }
+        if (other == myCollider) return; 
 
-        if (alreadyCollided.Contains(other)) { return; }
+        if (alreadyCollided.Contains(other)) return;
 
         alreadyCollided.Add(other);
 
         if (other.TryGetComponent<Health>(out Health health))
         {
             health.TakeDamage(10f);
-        }
+        }      
     }
 }
