@@ -6,6 +6,8 @@ using UnityEngine;
 public class WeaponDamage : MonoBehaviour
 {
     [SerializeField] private Collider myCollider;
+    [SerializeField] float weaponDamage = 5f;
+
 
     private List<Collider> alreadyCollided = new List<Collider>();
 
@@ -24,7 +26,7 @@ public class WeaponDamage : MonoBehaviour
 
         if (other.TryGetComponent<Health>(out Health health))
         {
-            health.TakeDamage(10f);
+            health.TakeDamage(weaponDamage);
         }      
     }
 }
