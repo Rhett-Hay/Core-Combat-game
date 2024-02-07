@@ -18,6 +18,8 @@ namespace RPG.Combat
             health = maxHealth;
         }
 
+        public bool IsDead() { return isDead; }
+
         public void TakeDamage(float damage)
         {
             if (health <= 0) return;
