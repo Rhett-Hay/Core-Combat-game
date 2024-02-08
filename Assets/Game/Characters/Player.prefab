@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCollider: {fileID: 1070802860565374539}
+  weaponDamage: 5
 --- !u!1001 &488761977443965628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -217,6 +218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: weaponRange
       value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4168832250784729342, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
