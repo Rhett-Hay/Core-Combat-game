@@ -62,14 +62,14 @@ namespace RPG.Combat
             return enemyPosition <= weaponRange;*/
         }
 
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null) return false;
             Health targetToTest = combatTarget.GetComponent<Health>();
             return targetToTest != null && !targetToTest.IsDead();
         }
 
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ScheduleAction>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
