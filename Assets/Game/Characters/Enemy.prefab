@@ -68,6 +68,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
+      propertyPath: weaponRange
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168832251001895108, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
+      propertyPath: m_Speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
       propertyPath: m_RootOrder
