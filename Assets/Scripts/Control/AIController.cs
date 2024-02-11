@@ -12,6 +12,8 @@ namespace RPG.Control
     {
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 3f;
+        [SerializeField] PatrolPath patrolPath;
+        [SerializeField] float waypointTolerance = 1.9f;
 
         Fighter fighter;
         Health health;
@@ -19,6 +21,7 @@ namespace RPG.Control
         GameObject player;
         Vector3 guardPosition;
         float timeSinceLastSeenPlayer = Mathf.Infinity;
+        int currentWaypointIndex = 0;
 
         private void Start()
         {
@@ -46,15 +49,41 @@ namespace RPG.Control
             else
             {
                 //movement.StartMoveAction(guardPosition);
-                GuardBehvior();
+                PatrolBehavior();
             }
 
             timeSinceLastSeenPlayer += Time.deltaTime;
         }
 
-        private void GuardBehvior()
+        private void PatrolBehavior()
         {
-            movement.StartMoveAction(guardPosition);
+            Vector3 nextPosition = guardPosition;
+
+            if (patrolPath != null)
+            {
+                if (AtWaypoint())
+                {
+                    CycleWaypoint();
+                }
+                nextPosition = GetCurrentWaypoint();
+            }
+            movement.StartMoveAction(nextPosition);
+        }
+
+        private bool AtWaypoint()
+        {
+            float distanceToWaypoint = Vector3.Distance(transform.position, GetCurrentWaypoint());
+            return distanceToWaypoint < waypointTolerance;
+        }
+
+        private void CycleWaypoint()
+        {
+            currentWaypointIndex = patrolPath.GetNextIndex(currentWaypointIndex);
+        }
+
+        private Vector3 GetCurrentWaypoint()
+        {
+            return patrolPath.GetWaypoint(currentWaypointIndex);
         }
 
         private void SuspicionBehavior()
