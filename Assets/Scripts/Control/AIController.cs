@@ -14,6 +14,7 @@ namespace RPG.Control
         [SerializeField] float suspicionTime = 3f;
         [SerializeField] PatrolPath patrolPath;
         [SerializeField] float waypointTolerance = 1.9f;
+        [SerializeField] float waypointDwellTime = 3f;
 
         Fighter fighter;
         Health health;
@@ -21,6 +22,7 @@ namespace RPG.Control
         GameObject player;
         Vector3 guardPosition;
         float timeSinceLastSeenPlayer = Mathf.Infinity;
+        float timeSinceArrivedAtWaypoint = Mathf.Infinity;
         int currentWaypointIndex = 0;
 
         private void Start()
@@ -39,7 +41,6 @@ namespace RPG.Control
             if (health.IsDead()) return;
             if (InRangeOfPlayer() && fighter.CanAttack(player))
             {
-                timeSinceLastSeenPlayer = 0;
                 AttackBehavior();
             }
             else if (timeSinceLastSeenPlayer < suspicionTime)
@@ -48,11 +49,16 @@ namespace RPG.Control
             }
             else
             {
-                //movement.StartMoveAction(guardPosition);
                 PatrolBehavior();
             }
 
+            UpdateTimers();           
+        }
+
+        private void UpdateTimers()
+        {
             timeSinceLastSeenPlayer += Time.deltaTime;
+            timeSinceArrivedAtWaypoint += Time.deltaTime;
         }
 
         private void PatrolBehavior()
@@ -63,11 +69,16 @@ namespace RPG.Control
             {
                 if (AtWaypoint())
                 {
+                    timeSinceArrivedAtWaypoint = 0;
                     CycleWaypoint();
                 }
                 nextPosition = GetCurrentWaypoint();
             }
-            movement.StartMoveAction(nextPosition);
+
+            if (timeSinceArrivedAtWaypoint > waypointDwellTime)
+            {
+                movement.StartMoveAction(nextPosition);
+            }
         }
 
         private bool AtWaypoint()
@@ -93,6 +104,7 @@ namespace RPG.Control
 
         private void AttackBehavior()
         {
+            timeSinceLastSeenPlayer = 0;
             fighter.Attack(player);
         }
 
