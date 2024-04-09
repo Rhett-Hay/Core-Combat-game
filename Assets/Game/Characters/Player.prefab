@@ -229,6 +229,11 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 7d0d0428d5df044d59dce61bb4201759, type: 3}
+    - target: {fileID: 4168832251001895108, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
       propertyPath: m_RootOrder
@@ -237,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -47.9
       objectReference: {fileID: 0}
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
@@ -247,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -48.2
       objectReference: {fileID: 0}
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
@@ -257,17 +262,17 @@ PrefabInstance:
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4168832251001895114, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
@@ -345,7 +350,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.67
+  m_Height: 1.83
   m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.3
