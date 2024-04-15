@@ -221,6 +221,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 2324191175389075044, guid: c93ee9896c013d84bb8eb5660b0620e9,
+        type: 3}
+    - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 1415575975728654698}
+    - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
       propertyPath: timeBetweenAttacks
       value: 3
       objectReference: {fileID: 0}
