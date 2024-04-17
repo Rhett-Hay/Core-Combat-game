@@ -232,6 +232,12 @@ PrefabInstance:
       objectReference: {fileID: 1415575975728654698}
     - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: f436879afd6f7af428f7eb8f65efd566,
+        type: 2}
+    - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
       propertyPath: timeBetweenAttacks
       value: 3
       objectReference: {fileID: 0}
