@@ -115,7 +115,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7491769921755114718}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de1fe278cb407604891788e35d809f51, type: 3}
   m_Name: 
@@ -214,6 +214,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 41474c8698b681340a33ca68238f4e8b,
+        type: 2}
     - target: {fileID: 1136740661661087627, guid: b41b0cbac29658742943619cf7ff9da2,
         type: 3}
       propertyPath: weaponRange
