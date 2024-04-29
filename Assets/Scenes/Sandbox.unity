@@ -10022,6 +10022,12 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.02073791
       objectReference: {fileID: 0}
+    - target: {fileID: 8333555696057477902, guid: f27ed82d310a2c8408ad4eaca72c8f6b,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 5312fb413d55a6f4688fb9a0b91ded82,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27ed82d310a2c8408ad4eaca72c8f6b, type: 3}
 --- !u!1001 &1670765658
@@ -10622,7 +10628,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975002236}
-  m_LocalRotation: {x: 0.2823171, y: -0.50914556, z: 0.18135859, w: 0.79257613}
+  m_LocalRotation: {x: 0.2823171, y: -0.5091455, z: 0.18135856, w: 0.7925762}
   m_LocalPosition: {x: 10.8, y: 6.4, z: 6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
