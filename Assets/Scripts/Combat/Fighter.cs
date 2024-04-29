@@ -7,11 +7,10 @@ namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
-        [SerializeField] float weaponRange = 3f;
+        //[SerializeField] float weaponRange = 3f;
         [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] GameObject weaponPrefab = null;
         [SerializeField] Transform handTransform = null;
-        [SerializeField] AnimatorOverrideController weaponOverride = null;
+        [SerializeField] Weapon weapon = null;
         
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
@@ -41,9 +40,10 @@ namespace RPG.Combat
 
         private void SpawnWeapon()
         {
-            Instantiate(weaponPrefab, handTransform);
+            if (weapon == null) return;
+            
             Animator animator = GetComponent<Animator>();
-            animator.runtimeAnimatorController = weaponOverride;
+            weapon.Spawn(handTransform, animator);
         }
 
         private void AttackBehaviour()
@@ -64,17 +64,16 @@ namespace RPG.Combat
             GetComponent<Animator>().SetTrigger("attack");
         }
 
-        /*void Hit()
+        void Hit()
         {
-            Health healthComp = GetComponent<Health>();
-            healthComp.TakeDamage(weaponDamage);
-        }*/
+            if(target == null) { return; }
+
+            target.TakeDamage(weapon.GetDamage());
+        }
 
         private bool GetIsInRange()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
-            /*float enemyPosition = Vector3.Distance(transform.position, target.position);
-            return enemyPosition <= weaponRange;*/
+            return Vector3.Distance(transform.position, target.transform.position) < weapon.GetRange();
         }
 
         public bool CanAttack(GameObject combatTarget)
